@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class BoardData : MonoBehaviour {
   
-  public Vector2Int robotPosition = new Vector2Int();
-  public Vector2Int robotDirection = new Vector2Int(1, 0);
-  public List<TileData> board = new List<TileData>();
+  [SerializeField] Vector2Int robotPosition = new Vector2Int();
+  [SerializeField] Vector2Int robotDirection = new Vector2Int(1, 0);
+  [SerializeField] List<TileData> board = new List<TileData>();
 
-  public MoveData[] players = new MoveData[2];
-  public MoveData shared = new MoveData();
+  [SerializeField] MoveData[] players = new MoveData[2];
+  [SerializeField] MoveData shared = new MoveData();
+
+  public Vector2Int GetRobotPosition() {
+    return robotPosition;
+  }
+
+  public void SetRobotPosition() {
+    robotPosition += robotDirection;
+  }
+
+  static BoardData _instance;
+  public static BoardData instance {
+    get {
+      if (_instance == null) {
+        _instance = GameObject.FindObjectOfType<BoardData>();
+      }
+      return _instance;
+    }
+  }
 }
 [System.Serializable]
 public class TileData {
