@@ -4,7 +4,6 @@ using UnityEngine;
 using Vuforia;
 
 public class ARManager : MonoBehaviour {
-
   public bool hasPlaced = false;
 
   [Space]
