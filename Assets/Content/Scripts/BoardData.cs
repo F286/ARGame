@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardData : MonoBehaviour {
+
+  int currentTurn = 0;
   
   [SerializeField] Vector2Int robotPosition = new Vector2Int();
   [SerializeField] Vector2Int robotDirection = new Vector2Int(1, 0);
-  [SerializeField] List<TileData> board = new List<TileData>();
 
-  [SerializeField] MoveData[] players = new MoveData[2];
-  [SerializeField] MoveData shared = new MoveData();
+  [SerializeField] List<Vector2Int> board = new List<Vector2Int>();
+  [SerializeField] List<Card> cards = new List<Card>();
 
   public Vector2Int GetRobotPosition() {
     return robotPosition;
@@ -17,6 +18,12 @@ public class BoardData : MonoBehaviour {
 
   public void SetRobotPosition() {
     robotPosition += robotDirection;
+  }
+
+  public bool IsDirty(ref int lastTurn) {
+    var isDirty = currentTurn == lastTurn;
+    lastTurn = currentTurn;
+    return isDirty;
   }
 
   static BoardData _instance;
@@ -30,13 +37,38 @@ public class BoardData : MonoBehaviour {
   }
 }
 [System.Serializable]
-public class TileData {
-  public Vector2Int position;
-  public MoveData move;
+public class Card {
+  public CardPosition position;
+  public CardType type;
 }
-[System.Serializable]
-public class MoveData {
-  public int forward;
-  public int left;
-  public int right;
+public enum CardPosition {
+  Player1Toolbox = -500,
+  Player2Toolbox = -499,
+  Player1Share = -400,
+  Player2Share = -399,
+  Tile0 = 0,
+  Tile1 = 1,
+  Tile2 = 2,
+  Tile3 = 3,
+  Tile4 = 4,
+  Tile5 = 5,
+  Tile6 = 6,
+  Tile7 = 7,
+  Tile8 = 8,
+  Tile9 = 9,
+  Tile10 = 10,
+  Tile11 = 11,
+  Tile12 = 12,
+  Tile13 = 13,
+  Tile14 = 14,
+  Tile15 = 15,
+}
+// [System.Serializable]
+// public class PlayerData {
+
+// }
+public enum CardType {
+  Forward,
+  Left,
+  Right
 }
