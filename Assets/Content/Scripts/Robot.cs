@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Robot : MonoBehaviour {
   public Vector2Int position;
+  public Vector2Int direction = new Vector2Int(1, 0);
 
   public float animateSpeed = 0.2f;
   Vector2 velocity;
@@ -16,7 +17,7 @@ public class Robot : MonoBehaviour {
   }
 
   public void OnInteract() {
-    position.x += 1;
+    position += direction;
   }
 
 }
