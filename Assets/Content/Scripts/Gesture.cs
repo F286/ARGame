@@ -11,7 +11,7 @@ public class Gesture : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
   public UnityEvent onInteract;
 
   public void OnPointerClick(PointerEventData eventData) {
-    print(eventData.pointerCurrentRaycast.worldPosition);
+    // print(eventData.pointerCurrentRaycast.worldPosition);
 
     onInteract.Invoke();
   }
