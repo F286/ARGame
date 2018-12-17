@@ -18,6 +18,7 @@ public class ARManager : MonoBehaviour {
     if (!hasPlaced) {
       hasPlaced = true;
       contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
+      contentPositioningBehaviour.gameObject.SetActive(false);
     }
   }
 
