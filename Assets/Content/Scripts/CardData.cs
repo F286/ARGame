@@ -24,6 +24,14 @@ public class CardData : MonoBehaviour {
   public List<Card> GetCards() {
     return cards;
   }
+  public CardPosition GetCardPosition(Vector2Int boardPosition) {
+    for (int i = 0; i < board.Count; i++) {
+      if (boardPosition == board[i]) {
+        return (CardPosition)i;
+      }
+    }
+    return CardPosition.Invalid;
+  }
 
 
   public void SetRobotPosition(Vector2Int target) {
@@ -59,6 +67,7 @@ public enum CardPosition {
   Player2Toolbox = -499,
   Player1Share = -400,
   Player2Share = -399,
+  Invalid = -300,
   Tile0 = 0,
   Tile1 = 1,
   Tile2 = 2,
