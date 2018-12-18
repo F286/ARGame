@@ -11,7 +11,6 @@ public class Gesture : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
   public UnityEvent onInteract;
 
   public void OnPointerClick(PointerEventData eventData) {
-    // print(eventData.pointerCurrentRaycast.worldPosition);
 
     onInteract.Invoke();
   }
@@ -24,7 +23,4 @@ public class Gesture : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     GetComponent<Renderer>().material.color = color;
   }
 
-  // public void OnValidate() {
-  //   GetComponent<Renderer>().sharedMaterial.color = color;
-  // }
 }

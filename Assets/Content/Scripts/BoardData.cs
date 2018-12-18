@@ -15,13 +15,16 @@ public class BoardData : MonoBehaviour {
   public Vector2Int GetRobotPosition() {
     return robotPosition;
   }
+  public List<Vector2Int> GetBoard() {
+    return board;
+  }
 
   public void SetRobotPosition() {
     robotPosition += robotDirection;
   }
 
   public bool IsDirty(ref int lastTurn) {
-    var isDirty = currentTurn == lastTurn;
+    var isDirty = currentTurn != lastTurn;
     lastTurn = currentTurn;
     return isDirty;
   }
@@ -63,10 +66,6 @@ public enum CardPosition {
   Tile14 = 14,
   Tile15 = 15,
 }
-// [System.Serializable]
-// public class PlayerData {
-
-// }
 public enum CardType {
   Forward,
   Left,
