@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forward
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -499
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &84235185 stripped
@@ -1183,6 +1188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forward
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &479306267 stripped
@@ -1333,6 +1343,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.8862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
@@ -2251,6 +2271,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.1254902
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.type
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &1190571372 stripped
@@ -2558,6 +2588,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -399
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.type
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &1218929245 stripped
@@ -2774,6 +2814,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.type
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
@@ -3425,6 +3475,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.1254902
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.type
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &2069246513 stripped
@@ -3641,6 +3701,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.8862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.position
+      value: -500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
