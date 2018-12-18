@@ -15,7 +15,7 @@ public class BoardVisual : MonoBehaviour {
   public GameObject generated;
 
   public void Update() {
-    if (BoardData.instance.IsDirty(ref lastUpdatedTurn)) {
+    if (CardData.instance.IsDirty(ref lastUpdatedTurn)) {
       // print("update board visual");
       start.SetActive(false);
       middle.SetActive(false);
@@ -26,7 +26,7 @@ public class BoardVisual : MonoBehaviour {
       }
 
       // Generate the board
-      var boardData = BoardData.instance.GetBoard();
+      var boardData = CardData.instance.GetBoard();
       for (int i = 0; i < boardData.Count; i++) {
         var item = boardData[i];
 

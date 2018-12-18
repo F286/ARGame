@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardData : MonoBehaviour {
+public class CardData : MonoBehaviour {
 
   int currentTurn = 0;
   
@@ -29,11 +29,11 @@ public class BoardData : MonoBehaviour {
     return isDirty;
   }
 
-  static BoardData _instance;
-  public static BoardData instance {
+  static CardData _instance;
+  public static CardData instance {
     get {
       if (_instance == null) {
-        _instance = GameObject.FindObjectOfType<BoardData>();
+        _instance = GameObject.FindObjectOfType<CardData>();
       }
       return _instance;
     }
@@ -69,5 +69,6 @@ public enum CardPosition {
 public enum CardType {
   Forward,
   Left,
-  Right
+  Right,
+  All,
 }

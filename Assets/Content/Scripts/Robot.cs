@@ -12,12 +12,12 @@ public class Robot : MonoBehaviour {
   public void Update() {
     // Animate robot to target position
     var p = new Vector2(transform.localPosition.x, transform.localPosition.z);
-    p = Vector2.SmoothDamp(p, BoardData.instance.GetRobotPosition(), ref velocity, animateSpeed);
+    p = Vector2.SmoothDamp(p, CardData.instance.GetRobotPosition(), ref velocity, animateSpeed);
     transform.localPosition = new Vector3(p.x, transform.localPosition.y, p.y);
   }
 
   public void OnInteract() {
-    BoardData.instance.SetRobotPosition();
+    CardData.instance.SetRobotPosition();
   }
 
 }
