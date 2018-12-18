@@ -16,7 +16,7 @@ public class BoardVisual : MonoBehaviour {
 
   public void Update() {
     if (CardData.instance.IsDirty(ref lastUpdatedTurn)) {
-      // print("update board visual");
+      
       start.SetActive(false);
       middle.SetActive(false);
       end.SetActive(false);
@@ -40,6 +40,7 @@ public class BoardVisual : MonoBehaviour {
         }
 
         var copy = GameObject.Instantiate(template, generated.transform);
+        copy.GetComponent<BlockVisual>().position = (CardPosition)i;
         copy.transform.localPosition = new Vector3(item.x, 0, item.y);
         copy.SetActive(true);
       }

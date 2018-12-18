@@ -15,6 +15,9 @@ public class CardData : MonoBehaviour {
   public Vector2Int GetRobotPosition() {
     return robotPosition;
   }
+  public Vector2Int GetRobotDirection() {
+    return robotDirection;
+  }
   public List<Vector2Int> GetBoard() {
     return board;
   }
@@ -23,8 +26,11 @@ public class CardData : MonoBehaviour {
   }
 
 
-  public void SetRobotPosition() {
-    robotPosition += robotDirection;
+  public void SetRobotPosition(Vector2Int target) {
+    robotPosition = target;
+  }
+  public void SetRobotDirection(Vector2Int target) {
+    robotDirection = target;
   }
 
   public bool IsDirty(ref int lastTurn) {
