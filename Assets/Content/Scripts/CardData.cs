@@ -18,6 +18,10 @@ public class CardData : MonoBehaviour {
   public List<Vector2Int> GetBoard() {
     return board;
   }
+  public List<Card> GetCards() {
+    return cards;
+  }
+
 
   public void SetRobotPosition() {
     robotPosition += robotDirection;
@@ -70,5 +74,5 @@ public enum CardType {
   Forward,
   Left,
   Right,
-  All,
+  // All,
 }
