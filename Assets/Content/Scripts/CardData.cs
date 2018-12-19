@@ -38,7 +38,12 @@ public class CardData : MonoBehaviour {
     return -1;
   }
   public Block FindBlock(int blockIndex) {
-    return blocks[blockIndex];
+    if (blockIndex >= 0 && blockIndex < blocks.Count) {
+      return blocks[blockIndex];
+    }
+    else {
+      return new Block(-99, Vector2Int.zero);
+    }
   }
   public void SetCard(Card target, Card setTo) {
     for (int i = 0; i < cards.Count; i++) {
@@ -120,6 +125,11 @@ public struct Card {
 public struct Block {
   public int player;
   public Vector2Int position;
+
+  public Block(int player, Vector2Int position) {
+    this.player = player;
+    this.position = position;
+  }
 }
 public enum Symbol {
   None,
