@@ -5,6 +5,12 @@ using UnityEngine;
 public class RobotSimulate : MonoBehaviour {
 
   public float animationDelay = 0.3f;
+  [Space]
+  public GameObject winScreen;
+
+  public void Start() {
+    winScreen.SetActive(false);
+  }
 
   public void Play() {
     StopAllCoroutines();
@@ -32,12 +38,10 @@ public class RobotSimulate : MonoBehaviour {
     var data = CardData.instance;
 
     var blockIndex = data.FindBlockIndex(data.GetRobotPosition());
+    var block = data.FindBlock(blockIndex);
 
-    // if (blockIndex == -1) {
-    //   yield return new WaitForSeconds(animationDelay);
-    // }
-    if (blockIndex == 2) {
-      print("you win!");
+    if (block.player == 2) {
+      winScreen.SetActive(true);
     }
     
     foreach (var item in data.GetCards()) {
