@@ -4125,6 +4125,14 @@ MonoBehaviour:
     blockIndex: 0
     symbol: 1
     location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 1
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 1
+    location: 0
   blocks:
   - player: -1
     position: {x: 0, y: 0}
