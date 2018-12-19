@@ -18,7 +18,8 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
 
   public void OnDrag(PointerEventData eventData) {
     graphic.position = eventData.position;
-    graphic.localPosition += new Vector3(0, 100, 0);
+    graphic.localPosition += new Vector3(0, 80, 0);
+    graphic.localScale = Vector3.one * 0.8f;
   }
 
   public void OnEndDrag(PointerEventData eventData) {
@@ -37,6 +38,7 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
     }
 
     GetComponent<CanvasGroup>().blocksRaycasts = true;
+    graphic.localScale = Vector3.one;
   }
 
   ICardTarget GetTarget(PointerEventData eventData) {
