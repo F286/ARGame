@@ -18,6 +18,7 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
 
   public void OnDrag(PointerEventData eventData) {
     graphic.position = eventData.position;
+    graphic.localPosition += new Vector3(0, 100, 0);
   }
 
   public void OnEndDrag(PointerEventData eventData) {
