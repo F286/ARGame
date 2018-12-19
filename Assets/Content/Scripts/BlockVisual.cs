@@ -31,15 +31,23 @@ public class BlockVisual : MonoBehaviour {
 
       var setBillboardActive = false;
 
+      var types = new List<CardType>();
+      
       foreach (var item in CardData.instance.GetCards()) {
         if (item.position == position) {
-          var copy = GameObject.Instantiate(templates[(int)item.type], billboard.transform);
-          copy.name = "[COPY]";
-          copy.SetActive(true);
-
-          setBillboardActive = true;
+          types.Add(item.type);
         }
       }
+      types.Sort((a, b) => (int)b - (int)a);
+
+      foreach (var item in types) {
+        var copy = GameObject.Instantiate(templates[(int)item], billboard.transform);
+        copy.name = "[COPY]";
+        copy.SetActive(true);
+
+        setBillboardActive = true;
+      }
+      
 
       billboard.SetActive(setBillboardActive);
     }
