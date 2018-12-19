@@ -34,6 +34,17 @@ public class CardData : MonoBehaviour {
   }
 
 
+  public void SetCard(Card target, CardPosition setTo) {
+    foreach (var item in cards) {
+      if (item.type == target.type && item.position == target.position) {
+        item.position = setTo;
+
+        SetDirty();
+        return;
+      }
+    }
+    Debug.Assert(false, "Could not find card: " + target.position + ", " + target.type);
+  }
   public void SetRobotPosition(Vector2Int target) {
     robotPosition = target;
   }
@@ -46,6 +57,9 @@ public class CardData : MonoBehaviour {
     lastTurn = currentTurn;
     return isDirty;
   }
+  void SetDirty() {
+    currentTurn += 1;
+  }
 
   static CardData _instance;
   public static CardData instance {
@@ -56,6 +70,11 @@ public class CardData : MonoBehaviour {
       return _instance;
     }
   }
+}
+[System.Serializable]
+public class Tile {
+  public Vector2Int board;
+  public int playerIndex;
 }
 [System.Serializable]
 public class Card {
@@ -89,5 +108,4 @@ public enum CardType {
   Forward,
   Left,
   Right,
-  // All,
 }

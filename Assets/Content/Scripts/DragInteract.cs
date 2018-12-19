@@ -7,10 +7,15 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
 
   public RectTransform graphic;
 
+  [Space]
+  public CardVisual cardVisual;
+
   public void OnInitializePotentialDrag(PointerEventData eventData) {
     
   }
   public void OnBeginDrag(PointerEventData eventData) {
+    GetComponent<CanvasGroup>().blocksRaycasts = false;
+
     graphic.position = eventData.position;
   }
 
@@ -22,6 +27,20 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
     
     // graphic.sizeDelta = Vector2.zero;
     graphic.anchoredPosition = Vector2.zero;
+
+    var hovered = eventData.hovered[0].GetComponentInParent<IDragInteractTarget>();
+
+    Debug.Log(hovered);
+
+    var position = hovered.GetPosition();
+    print(position);
+    print("cardVisual.card.position: " + cardVisual.card.position);
+
+    if ((int)position > 0) {
+      CardData.instance.SetCard(cardVisual.card, position);
+    }
+
+    GetComponent<CanvasGroup>().blocksRaycasts = true;
   }
 
 }

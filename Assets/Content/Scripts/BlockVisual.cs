@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlockVisual : MonoBehaviour {
+public class BlockVisual : MonoBehaviour, IDragInteractTarget {
 
   int lastUpdatedTurn = -1;
 
   public CardPosition position;
+  public int playerIndex;
 
   [Space]
   public GameObject billboard;
@@ -53,4 +54,10 @@ public class BlockVisual : MonoBehaviour {
     }
   }
 
+  public CardPosition GetPosition() {
+    return position;
+  }
+  public int GetPlayerIndex() {
+    return playerIndex;
+  }
 }
