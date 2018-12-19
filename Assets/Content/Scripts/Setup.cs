@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// May need to copy this to top line of CameraCapture.mm to fix xCode Error
+// #define STATIC_ARRAY_COUNT(arr) sizeof(arr)/sizeof(arr[0])
+
 public class Setup : MonoBehaviour {
 
   [Header("Fixed camera mode in editor instead of Vuforia")]
