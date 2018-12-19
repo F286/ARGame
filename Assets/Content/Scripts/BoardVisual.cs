@@ -41,7 +41,7 @@ public class BoardVisual : MonoBehaviour {
 
         var copy = GameObject.Instantiate(template, generated.transform);
         copy.GetComponent<BlockVisual>().position = (CardPosition)i;
-        copy.transform.localPosition = new Vector3(item.x, 0, item.y);
+        copy.transform.localPosition = new Vector3(item.board.x, 0, item.board.y);
         copy.SetActive(true);
       }
     }

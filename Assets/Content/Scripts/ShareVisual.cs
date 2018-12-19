@@ -3,34 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShareVisual : MonoBehaviour {
+public class ShareVisual : MonoBehaviour, ICardTarget {
 
   int lastUpdatedTurn = -1;
 
-  public Card card;
+  public CardPosition position;
   public GameObject[] graphics;
 
   public void Update() {
     if (CardData.instance.IsDirty(ref lastUpdatedTurn)) {
 
-      CardType? cardType = null;
-
-      foreach (var item in CardData.instance.GetCards()) {
-        if (item.position == card.position) {
-          cardType = item.type;
-        }
-      }
       foreach (var item in graphics) {
         item.SetActive(false);
       }
+      var cardType = FindCardType();
       
-      if (cardType.HasValue) {
-        graphics[(int)cardType.Value + 1].SetActive(true);
-      }
-      else {
-        graphics[0].SetActive(true);
+      graphics[(int)cardType].SetActive(true);
+    }
+  }
+  CardType FindCardType() {
+    CardType? cardType = null;
+
+    foreach (var item in CardData.instance.GetCards()) {
+      if (item.position == position) {
+        cardType = item.type;
       }
     }
+
+    if (cardType.HasValue) {
+      return cardType.Value;
+    }
+    else {
+      return CardType.Invalid;
+    }
+  }
+
+  public CardPosition GetPosition() {
+    return position;
+  }
+  public CardType GetCardType() {
+    return FindCardType();
+  }
+  public int GetPlayerIndex() {
+    return CardTarget.CalculatePlayerIndex(position);
   }
 
 }

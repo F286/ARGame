@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardVisual : MonoBehaviour, IDragInteractTarget {
+public class CardVisual : MonoBehaviour, ICardTarget {
 
   int lastUpdatedTurn = -1;
 
@@ -29,16 +29,11 @@ public class CardVisual : MonoBehaviour, IDragInteractTarget {
   public CardPosition GetPosition() {
     return card.position;
   }
-
-  public int GetPlayerIndex() {
-    if (card.position == CardPosition.Player1Share || 
-        card.position == CardPosition.Player1Toolbox) {
-      return 1;
-    }
-    else if ( card.position == CardPosition.Player2Share || 
-              card.position == CardPosition.Player2Toolbox) {
-      return 2;
-    }
-    return 0;
+  public CardType GetCardType() {
+    return card.type;
   }
+  public int GetPlayerIndex() {
+    return CardTarget.CalculatePlayerIndex(card.position);
+  }
+
 }

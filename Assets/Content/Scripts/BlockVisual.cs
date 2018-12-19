@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlockVisual : MonoBehaviour, IDragInteractTarget {
+public class BlockVisual : MonoBehaviour, ICardTarget {
 
   int lastUpdatedTurn = -1;
 
@@ -57,7 +57,11 @@ public class BlockVisual : MonoBehaviour, IDragInteractTarget {
   public CardPosition GetPosition() {
     return position;
   }
+  public CardType GetCardType() {
+    return CardType.Invalid;
+  }
   public int GetPlayerIndex() {
     return playerIndex;
   }
+
 }

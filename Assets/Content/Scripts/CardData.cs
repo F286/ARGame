@@ -9,7 +9,7 @@ public class CardData : MonoBehaviour {
   [SerializeField] Vector2Int robotPosition = new Vector2Int();
   [SerializeField] Vector2Int robotDirection = new Vector2Int(1, 0);
 
-  [SerializeField] List<Vector2Int> board = new List<Vector2Int>();
+  [SerializeField] List<Tile> board = new List<Tile>();
   [SerializeField] List<Card> cards = new List<Card>();
 
   public Vector2Int GetRobotPosition() {
@@ -18,7 +18,7 @@ public class CardData : MonoBehaviour {
   public Vector2Int GetRobotDirection() {
     return robotDirection;
   }
-  public List<Vector2Int> GetBoard() {
+  public List<Tile> GetBoard() {
     return board;
   }
   public List<Card> GetCards() {
@@ -26,7 +26,7 @@ public class CardData : MonoBehaviour {
   }
   public CardPosition GetCardPosition(Vector2Int boardPosition) {
     for (int i = 0; i < board.Count; i++) {
-      if (boardPosition == board[i]) {
+      if (boardPosition == board[i].board) {
         return (CardPosition)i;
       }
     }
@@ -34,16 +34,16 @@ public class CardData : MonoBehaviour {
   }
 
 
-  public void SetCard(Card target, CardPosition setTo) {
+  public void SetCard(CardPosition cardPosition, CardType cardType, CardPosition setTo) {
     foreach (var item in cards) {
-      if (item.type == target.type && item.position == target.position) {
+      if (item.type == cardType && item.position == cardPosition) {
         item.position = setTo;
 
         SetDirty();
         return;
       }
     }
-    Debug.Assert(false, "Could not find card: " + target.position + ", " + target.type);
+    Debug.Assert(false, "Could not find card: " + cardPosition + ", " + cardType);
   }
   public void SetRobotPosition(Vector2Int target) {
     robotPosition = target;
@@ -105,6 +105,7 @@ public enum CardPosition {
   Tile15 = 15,
 }
 public enum CardType {
+  Invalid,
   Forward,
   Left,
   Right,

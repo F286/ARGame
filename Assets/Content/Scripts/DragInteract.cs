@@ -7,8 +7,8 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
 
   public RectTransform graphic;
 
-  [Space]
-  public CardVisual cardVisual;
+  // [Space]
+  // public CardVisual cardVisual;
 
   public void OnInitializePotentialDrag(PointerEventData eventData) {
     
@@ -25,19 +25,27 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
 
   public void OnEndDrag(PointerEventData eventData) {
     
-    // graphic.sizeDelta = Vector2.zero;
     graphic.anchoredPosition = Vector2.zero;
 
-    var hovered = eventData.hovered[0].GetComponentInParent<IDragInteractTarget>();
+    var hovered = eventData.hovered[0].GetComponentInParent<ICardTarget>();
 
-    Debug.Log(hovered);
+    if (hovered != null) {
+      var cardTarget = GetComponent<ICardTarget>();
+      var cardPosition = cardTarget.GetPosition();
+      var cardType = cardTarget.GetCardType();
 
-    var position = hovered.GetPosition();
-    print(position);
-    print("cardVisual.card.position: " + cardVisual.card.position);
+      var position = hovered.GetPosition();
 
-    if ((int)position > 0) {
-      CardData.instance.SetCard(cardVisual.card, position);
+      if ((int)position > 0) {
+        CardData.instance.SetCard(cardPosition, cardType, position);
+      }
+      else if ( position == CardPosition.Player1Share || 
+                position == CardPosition.Player2Share || 
+                position == CardPosition.Player1Toolbox || 
+                position == CardPosition.Player2Toolbox) {
+        
+        CardData.instance.SetCard(cardPosition, cardType, position);
+      }
     }
 
     GetComponent<CanvasGroup>().blocksRaycasts = true;
