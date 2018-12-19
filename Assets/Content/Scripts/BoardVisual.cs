@@ -26,22 +26,26 @@ public class BoardVisual : MonoBehaviour {
       }
 
       // Generate the board
-      var boardData = CardData.instance.GetBoard();
-      for (int i = 0; i < boardData.Count; i++) {
-        var item = boardData[i];
+      var blocks = new List<Block>();
+      foreach (var item in CardData.instance.GetBlocks()) {
+        blocks.Add(item);
+      }
+
+      for (int i = 0; i < blocks.Count; i++) {
+        var block = blocks[i];
 
         // Pick which template to use
         var template = middle;
         if (i == 0) {
           template = start;
         }
-        else if (i == boardData.Count - 1) {
+        else if (i == blocks.Count - 1) {
           template = end;
         }
 
         var copy = GameObject.Instantiate(template, generated.transform);
-        copy.GetComponent<BlockVisual>().position = (CardPosition)i;
-        copy.transform.localPosition = new Vector3(item.board.x, 0, item.board.y);
+        copy.GetComponent<BlockVisual>().card = new Card(block.player, i, Symbol.None, Location.Block);
+        copy.transform.localPosition = new Vector3(block.position.x, 0, block.position.y);
         copy.SetActive(true);
       }
     }

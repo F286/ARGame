@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &396689195520790413 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8003960823952188031, guid: bf488aaf84bac1440abda175760d04c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7679364480392801778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130309089752589745
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,8 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5362d5571e6c5e949a3adc9c2ce46961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: 0
-  playerIndex: 0
+  card:
+    player: 0
+    blockIndex: 0
+    symbol: 0
+    location: 2
   billboard: {fileID: 1260208076123153980}
   templates:
   - {fileID: 2756524801356869121}
@@ -647,12 +656,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!224 &396689195520790413 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8003960823952188031, guid: bf488aaf84bac1440abda175760d04c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7679364480392801778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7679364480392801778
 PrefabInstance:
   m_ObjectHideFlags: 0

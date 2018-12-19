@@ -18,7 +18,7 @@ public class CardVisual : MonoBehaviour, ICardTarget {
       var count = 0;
 
       foreach (var item in CardData.instance.GetCards()) {
-        if (item.position == card.position && item.type == card.type) {
+        if (item == card) {
           count += 1;
         }
       }
@@ -26,14 +26,17 @@ public class CardVisual : MonoBehaviour, ICardTarget {
     }
   }
 
-  public CardPosition GetPosition() {
-    return card.position;
-  }
-  public CardType GetCardType() {
-    return card.type;
-  }
-  public int GetPlayerIndex() {
-    return CardTarget.CalculatePlayerIndex(card.position);
-  }
+  // public CardPosition GetPosition() {
+  //   return card.position;
+  // }
+  // public CardType GetCardType() {
+  //   return card.type;
+  // }
+  // public int GetPlayerIndex() {
+  //   return CardTarget.CalculatePlayerIndex(card.position);
+  // }
 
+  public Card GetCard() {
+    return card;
+  }
 }

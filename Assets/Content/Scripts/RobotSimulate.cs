@@ -26,14 +26,15 @@ public class RobotSimulate : MonoBehaviour {
   IEnumerator ActivateTile() {
     var data = CardData.instance;
 
-    var position = data.GetCardPosition(data.GetRobotPosition());
+    var blockIndex = data.FindBlockIndex(data.GetRobotPosition());
 
-    if (position == CardPosition.Invalid) {
+    if (blockIndex == -1) {
       print("Robot is off grid");
     }
     
     foreach (var item in data.GetCards()) {
-      if (item.position == position && item.type == CardType.Left) {
+      if (item.blockIndex == blockIndex && item.symbol == Symbol.Left
+          && item.location == Location.Block) {
         var d = data.GetRobotDirection();
         d = new Vector2Int(-d.y, d.x);
         data.SetRobotDirection(d);
@@ -43,7 +44,8 @@ public class RobotSimulate : MonoBehaviour {
     }
     
     foreach (var item in data.GetCards()) {
-      if (item.position == position && item.type == CardType.Right) {
+      if (item.blockIndex == blockIndex && item.symbol == Symbol.Right
+          && item.location == Location.Block) {
         var d = data.GetRobotDirection();
         d = new Vector2Int(d.y, -d.x);
         data.SetRobotDirection(d);
@@ -53,7 +55,8 @@ public class RobotSimulate : MonoBehaviour {
     }
 
     foreach (var item in data.GetCards()) {
-      if (item.position == position && item.type == CardType.Forward) {
+      if (item.blockIndex == blockIndex && item.symbol == Symbol.Forward
+          && item.location == Location.Block) {
         data.SetRobotPosition(data.GetRobotPosition() + data.GetRobotDirection());
 
         yield return new WaitForSeconds(animationDelay);

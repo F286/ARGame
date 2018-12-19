@@ -7,8 +7,9 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
 
   int lastUpdatedTurn = -1;
 
-  public CardPosition position;
-  public int playerIndex;
+  public Card card;
+  // public CardPosition position;
+  // public int playerIndex;
 
   [Space]
   public GameObject billboard;
@@ -32,11 +33,11 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
 
       var setBillboardActive = false;
 
-      var types = new List<CardType>();
-      
+      var types = new List<Symbol>();
       foreach (var item in CardData.instance.GetCards()) {
-        if (item.position == position) {
-          types.Add(item.type);
+        if (item.blockIndex == card.blockIndex && 
+            item.location == card.location) {
+          types.Add(item.symbol);
         }
       }
       types.Sort((a, b) => (int)b - (int)a);
@@ -49,19 +50,22 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
         setBillboardActive = true;
       }
       
-
       billboard.SetActive(setBillboardActive);
     }
   }
 
-  public CardPosition GetPosition() {
-    return position;
+  public Card GetCard() {
+    return card;
   }
-  public CardType GetCardType() {
-    return CardType.Invalid;
-  }
-  public int GetPlayerIndex() {
-    return playerIndex;
-  }
+
+  // public CardPosition GetPosition() {
+  //   return position;
+  // }
+  // public CardType GetCardType() {
+  //   return CardType.Invalid;
+  // }
+  // public int GetPlayerIndex() {
+  //   return playerIndex;
+  // }
 
 }

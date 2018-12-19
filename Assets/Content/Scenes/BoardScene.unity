@@ -370,6 +370,16 @@ PrefabInstance:
       propertyPath: card.type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.symbol
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &84235185 stripped
@@ -1209,6 +1219,11 @@ PrefabInstance:
       propertyPath: card.type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.symbol
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &479306267 stripped
@@ -1368,6 +1383,16 @@ PrefabInstance:
     - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
         type: 3}
       propertyPath: card.type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.symbol
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3376,7 +3401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0161e3572c35f5468d6def43f44b5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: -400
+  card:
+    player: 0
+    blockIndex: 0
+    symbol: 0
+    location: 1
   graphics:
   - {fileID: 1184713740}
   - {fileID: 1910002519}
@@ -3751,6 +3780,16 @@ PrefabInstance:
       propertyPath: card.type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.symbol
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &1190571372 stripped
@@ -4108,48 +4147,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robotPosition: {x: 0, y: 0}
   robotDirection: {x: 1, y: 0}
-  board:
-  - board: {x: 0, y: 0}
-    playerIndex: 0
-  - board: {x: 1, y: 0}
-    playerIndex: 1
-  - board: {x: 2, y: 0}
-    playerIndex: 2
-  - board: {x: 3, y: 0}
-    playerIndex: 1
-  - board: {x: 4, y: 0}
-    playerIndex: 1
-  - board: {x: 4, y: 1}
-    playerIndex: 2
-  - board: {x: 4, y: 2}
-    playerIndex: 2
-  - board: {x: 4, y: 3}
-    playerIndex: 1
-  - board: {x: 3, y: 3}
-    playerIndex: 2
-  - board: {x: 2, y: 3}
-    playerIndex: 0
-  - board: {x: 1, y: 3}
-    playerIndex: 0
-  - board: {x: 1, y: 4}
-    playerIndex: 0
   cards:
-  - position: -500
-    type: 3
-  - position: 0
-    type: 1
-  - position: 1
-    type: 1
-  - position: 2
-    type: 1
-  - position: 2
-    type: 2
-  - position: -500
-    type: 2
-  - position: -500
-    type: 1
-  - position: -499
-    type: 2
+  - player: 0
+    blockIndex: 0
+    symbol: 1
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 2
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 3
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 1
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 2
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 3
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 1
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 2
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 1
+    location: 2
+  - player: 0
+    blockIndex: 1
+    symbol: 2
+    location: 2
+  - player: 0
+    blockIndex: 0
+    symbol: 2
+    location: 1
+  blocks:
+  - player: 0
+    position: {x: 0, y: 0}
+  - player: 0
+    position: {x: 1, y: 0}
+  - player: 1
+    position: {x: 2, y: 0}
+  - player: 1
+    position: {x: 2, y: 1}
 --- !u!4 &1315751611
 Transform:
   m_ObjectHideFlags: 0
@@ -4771,7 +4822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0161e3572c35f5468d6def43f44b5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: -399
+  card:
+    player: 1
+    blockIndex: 0
+    symbol: 0
+    location: 1
   graphics:
   - {fileID: 1481699563}
   - {fileID: 2060464474}
@@ -5285,6 +5340,11 @@ PrefabInstance:
       propertyPath: card.type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.symbol
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
 --- !u!224 &2069246513 stripped
@@ -5510,6 +5570,11 @@ PrefabInstance:
     - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
         type: 3}
       propertyPath: card.type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: card.symbol
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
