@@ -8,7 +8,6 @@ public class ShareVisual : MonoBehaviour, ICardTarget {
   int lastUpdatedTurn = -1;
 
   public Card card;
-  // public CardPosition position;
   public GameObject[] graphics;
 
   public void Update() {
@@ -28,38 +27,11 @@ public class ShareVisual : MonoBehaviour, ICardTarget {
 
       // Set Graphic
       graphics[(int)card.symbol].SetActive(true);
-
-      // var cardType = FindCardType();
       
-      // graphics[(int)cardType].SetActive(true);
+      GetComponent<Button>().interactable = card.symbol != Symbol.None;
+      GetComponent<DragInteract>().enabled = card.symbol != Symbol.None;
     }
   }
-  // CardType FindCardType() {
-  //   CardType? cardType = null;
-
-  //   foreach (var item in CardData.instance.GetCards()) {
-  //     if (item.position == position) {
-  //       cardType = item.type;
-  //     }
-  //   }
-
-  //   if (cardType.HasValue) {
-  //     return cardType.Value;
-  //   }
-  //   else {
-  //     return CardType.Invalid;
-  //   }
-  // }
-
-  // public CardPosition GetPosition() {
-  //   return position;
-  // }
-  // public CardType GetCardType() {
-  //   return FindCardType();
-  // }
-  // public int GetPlayerIndex() {
-  //   return CardTarget.CalculatePlayerIndex(position);
-  // }
 
   public Card GetCard() {
     return card;

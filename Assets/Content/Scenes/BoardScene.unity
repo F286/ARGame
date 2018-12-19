@@ -1574,7 +1574,7 @@ GameObject:
   - component: {fileID: 720565214}
   - component: {fileID: 720565215}
   m_Layer: 0
-  m_Name: Toolbox
+  m_Name: Toolbox 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1850,8 +1850,9 @@ GameObject:
   - component: {fileID: 885253575}
   - component: {fileID: 885253577}
   - component: {fileID: 885253576}
+  - component: {fileID: 885253578}
   m_Layer: 0
-  m_Name: Send Holder (1)
+  m_Name: Share
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1916,6 +1917,21 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &885253578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885253574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9795cd09ae28ab24985cdafe56904547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 0.5
+  player0: {fileID: 1092487134}
+  player1: {fileID: 1809612851}
 --- !u!1 &930564074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,7 +4080,7 @@ PrefabInstance:
     - target: {fileID: 1325896546738661048, guid: f442b048497c8534c94f8180b296c0f5,
         type: 3}
       propertyPath: m_Name
-      value: Send
+      value: Player 1 Share
       objectReference: {fileID: 0}
     - target: {fileID: 1325896546777431325, guid: f442b048497c8534c94f8180b296c0f5,
         type: 3}
@@ -4106,6 +4122,21 @@ PrefabInstance:
         type: 3}
       propertyPath: card.type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783779225796307419, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783779225796307419, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783779225796307419, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
@@ -4330,7 +4361,7 @@ PrefabInstance:
     - target: {fileID: 1325896546738661048, guid: f442b048497c8534c94f8180b296c0f5,
         type: 3}
       propertyPath: m_Name
-      value: Send (1)
+      value: Player 0 Share
       objectReference: {fileID: 0}
     - target: {fileID: 1325896546777431325, guid: f442b048497c8534c94f8180b296c0f5,
         type: 3}
@@ -4372,6 +4403,21 @@ PrefabInstance:
         type: 3}
       propertyPath: card.type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783779225796307419, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783779225796307419, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783779225796307419, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
@@ -4726,7 +4772,7 @@ GameObject:
   - component: {fileID: 1717011597}
   - component: {fileID: 1717011596}
   m_Layer: 0
-  m_Name: Toolbox (1)
+  m_Name: Toolbox 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

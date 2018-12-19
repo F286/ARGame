@@ -73,7 +73,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.95, g: 0.95, b: 0.95, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 377242400422796514}
-  cardVisual: {fileID: 7881918696549548475}
 --- !u!114 &7881918696549548475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,9 +138,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card:
-    position: 0
-    type: 0
+    player: 0
+    blockIndex: 0
+    symbol: 0
+    location: 0
   text: {fileID: 189872258308469106}
+  number: {fileID: 3276089217467461087}
 --- !u!225 &5443640374328594867
 CanvasGroup:
   m_ObjectHideFlags: 0

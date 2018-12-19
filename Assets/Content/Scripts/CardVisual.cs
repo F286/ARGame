@@ -11,6 +11,7 @@ public class CardVisual : MonoBehaviour, ICardTarget {
 
   [Space]
   public Text text;
+  public GameObject number;
 
   public void Update() {
     if (CardData.instance.IsDirty(ref lastUpdatedTurn)) {
@@ -23,18 +24,13 @@ public class CardVisual : MonoBehaviour, ICardTarget {
         }
       }
       text.text = count.ToString();
+      number.SetActive(count > 0);
+
+      GetComponent<Button>().interactable = count > 0;
+      GetComponent<DragInteract>().enabled = count > 0;
+
     }
   }
-
-  // public CardPosition GetPosition() {
-  //   return card.position;
-  // }
-  // public CardType GetCardType() {
-  //   return card.type;
-  // }
-  // public int GetPlayerIndex() {
-  //   return CardTarget.CalculatePlayerIndex(card.position);
-  // }
 
   public Card GetCard() {
     return card;

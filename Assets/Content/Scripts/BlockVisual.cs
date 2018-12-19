@@ -8,8 +8,6 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
   int lastUpdatedTurn = -1;
 
   public Card card;
-  // public CardPosition position;
-  // public int playerIndex;
 
   [Space]
   public GameObject billboard;
@@ -57,15 +55,5 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
   public Card GetCard() {
     return card;
   }
-
-  // public CardPosition GetPosition() {
-  //   return position;
-  // }
-  // public CardType GetCardType() {
-  //   return CardType.Invalid;
-  // }
-  // public int GetPlayerIndex() {
-  //   return playerIndex;
-  // }
 
 }
