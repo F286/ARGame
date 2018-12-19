@@ -6,29 +6,36 @@ using UnityEngine.EventSystems;
 
 public class Gesture : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler {
 
+  public Color color = Color.black;
   public UnityEvent onInteract;
   
-  Color? color = null;
+  // Color? color = null;
 
   public void OnPointerClick(PointerEventData eventData) {
 
-    print(eventData.clickCount);
+    // print(eventData.clickCount);
     if (eventData.clickCount == 2) {
       onInteract.Invoke();
     }
   }
 
   public void OnPointerEnter(PointerEventData eventData) {
-    if (!color.HasValue) {
-      color = GetComponent<Renderer>().material.color;
-    }
-    GetComponent<Renderer>().material.color = Color.Lerp(color.Value, Color.black, 0.1f);
+    ValidateColor();
+
+    GetComponent<Renderer>().material.color = Color.Lerp(color, Color.black, 0.1f);
   }
 
   public void OnPointerExit(PointerEventData eventData) {
-    if (!color.HasValue) {
+    ValidateColor();
+
+    GetComponent<Renderer>().material.color = color;
+  }
+
+  void ValidateColor() {
+    // Color is set before material can be assigned.. add delay ?
+    if (color == Color.black) {
+      GetComponent<Renderer>().material = GameObject.Instantiate(GetComponent<Renderer>().material);
       color = GetComponent<Renderer>().material.color;
     }
-    GetComponent<Renderer>().material.color = color.Value;
   }
 }

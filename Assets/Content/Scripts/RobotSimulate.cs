@@ -21,6 +21,11 @@ public class RobotSimulate : MonoBehaviour {
     yield return new WaitForSeconds(animationDelay);
     
     yield return ActivateTile();
+
+    yield return new WaitForSeconds(animationDelay);
+    
+    data.SetRobotPosition(new Vector2Int(0, 0));
+    data.SetRobotDirection(new Vector2Int(1, 0));
   }
 
   IEnumerator ActivateTile() {
@@ -28,8 +33,11 @@ public class RobotSimulate : MonoBehaviour {
 
     var blockIndex = data.FindBlockIndex(data.GetRobotPosition());
 
-    if (blockIndex == -1) {
-      print("Robot is off grid");
+    // if (blockIndex == -1) {
+    //   yield return new WaitForSeconds(animationDelay);
+    // }
+    if (blockIndex == 2) {
+      print("you win!");
     }
     
     foreach (var item in data.GetCards()) {
@@ -62,6 +70,7 @@ public class RobotSimulate : MonoBehaviour {
         yield return new WaitForSeconds(animationDelay);
 
         yield return ActivateTile();
+        break;
       }
     }
 

@@ -1,5 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &396689195520790413 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8003960823952188031, guid: bf488aaf84bac1440abda175760d04c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7679364480392801778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130309089752589745
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f4ff23a71d5bb448e29cfd46363d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 1}
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -136,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card:
-    player: 0
+    player: -1
     blockIndex: 0
     symbol: 0
     location: 2
@@ -147,7 +154,7 @@ MonoBehaviour:
   - {fileID: 4522558280707481627}
   - {fileID: 1642319051145444566}
   materials:
-  - {fileID: 2100000, guid: d504acc4ebd51064d832b06b87a40d24, type: 2}
+  - {fileID: 0}
   - {fileID: 2100000, guid: 5360285e84b3aab4c9e25c5a6b6a9496, type: 2}
   - {fileID: 2100000, guid: 6e1ec440be3dca8499754de75492fa92, type: 2}
 --- !u!114 &7767821539941250666
@@ -677,12 +684,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!224 &396689195520790413 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8003960823952188031, guid: bf488aaf84bac1440abda175760d04c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7679364480392801778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7679364480392801778
 PrefabInstance:
   m_ObjectHideFlags: 0
