@@ -154,7 +154,6 @@ MonoBehaviour:
   - {fileID: 4522558280707481627}
   - {fileID: 1642319051145444566}
   materials:
-  - {fileID: 0}
   - {fileID: 2100000, guid: 5360285e84b3aab4c9e25c5a6b6a9496, type: 2}
   - {fileID: 2100000, guid: 6e1ec440be3dca8499754de75492fa92, type: 2}
 --- !u!114 &7767821539941250666

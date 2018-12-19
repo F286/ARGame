@@ -59,8 +59,8 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
     
     billboard.SetActive(setBillboardActive);
 
-    if (card.player >= 0) {
-      GetComponent<MeshRenderer>().material = materials[card.player + 1];
+    if (card.player >= 0 && card.player < materials.Length) {
+      GetComponent<MeshRenderer>().material = materials[card.player];
     }
   }
 

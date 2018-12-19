@@ -4,7 +4,6 @@ using UnityEngine;
 using Vuforia;
 
 public class ARManager : MonoBehaviour {
-  public bool hasPlaced = false;
 
   [Space]
   public ContentPositioningBehaviour contentPositioningBehaviour;
@@ -14,17 +13,15 @@ public class ARManager : MonoBehaviour {
   }
 
   public void OnInteractiveHitTest(HitTestResult result) {
-    // print("interactive: " + result.Position);
-    if (!hasPlaced) {
-      hasPlaced = true;
-      contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
-      contentPositioningBehaviour.gameObject.SetActive(false);
-    }
+    contentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
+    contentPositioningBehaviour.gameObject.SetActive(false);
   }
 
   public void OnAutomaticHitTest(HitTestResult result) {
-    // print("automatic: " + result.Position);
     
   }
 
+  public void ShowPlace() {
+    contentPositioningBehaviour.gameObject.SetActive(true);
+  }
 }
