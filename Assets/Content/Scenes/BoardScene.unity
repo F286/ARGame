@@ -4040,66 +4040,66 @@ MonoBehaviour:
   robotPosition: {x: 0, y: 0}
   robotDirection: {x: 1, y: 0}
   cards:
-  - player: 0
-    blockIndex: 0
-    symbol: 1
-    location: 0
-  - player: 0
-    blockIndex: 0
-    symbol: 2
-    location: 0
-  - player: 0
-    blockIndex: 0
-    symbol: 3
-    location: 0
-  - player: 1
-    blockIndex: 0
-    symbol: 1
-    location: 0
-  - player: 1
-    blockIndex: 0
-    symbol: 2
-    location: 0
-  - player: 1
-    blockIndex: 0
-    symbol: 3
-    location: 0
-  - player: 0
-    blockIndex: 0
-    symbol: 1
-    location: 0
-  - player: 1
-    blockIndex: 0
-    symbol: 2
-    location: 0
-  - player: 0
+  - player: -1
     blockIndex: 0
     symbol: 1
     location: 2
+  - player: 0
+    blockIndex: 0
+    symbol: 2
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 3
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 1
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 2
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 3
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 1
+    location: 0
+  - player: 1
+    blockIndex: 0
+    symbol: 2
+    location: 0
+  - player: 0
+    blockIndex: 0
+    symbol: 1
+    location: 0
   - player: 0
     blockIndex: 1
     symbol: 2
-    location: 2
+    location: 0
   - player: 0
     blockIndex: 0
     symbol: 2
-    location: 1
+    location: 0
   - player: 0
     blockIndex: 0
     symbol: 1
-    location: 1
+    location: 0
   - player: 0
     blockIndex: 0
     symbol: 1
-    location: 1
+    location: 0
   - player: 1
     blockIndex: 0
     symbol: 1
-    location: 1
+    location: 0
   - player: 1
     blockIndex: 0
     symbol: 1
-    location: 1
+    location: 0
   blocks:
   - player: -1
     position: {x: 0, y: 0}

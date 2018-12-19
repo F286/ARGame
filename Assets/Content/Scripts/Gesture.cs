@@ -9,23 +9,23 @@ public class Gesture : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
   public Color color = Color.black;
   public UnityEvent onInteract;
 
+  float lastTapTime = -100;
+
   public void Start() {
     GetComponent<Renderer>().material = GameObject.Instantiate(GetComponent<Renderer>().material);
     color = GetComponent<Renderer>().material.color;
   }
-  
-  // Color? color = null;
 
   public void OnPointerClick(PointerEventData eventData) {
 
-    // print(eventData.clickCount);
-    if (eventData.clickCount == 2) {
+    if (Time.time - lastTapTime < 0.3f) {
       onInteract.Invoke();
     }
+
+    lastTapTime = Time.time;
   }
 
   public void OnPointerEnter(PointerEventData eventData) {
-    // ValidateColor();
 
     if (color != Color.black) {
       GetComponent<Renderer>().material.color = Color.Lerp(color, Color.black, 0.1f);
@@ -38,12 +38,5 @@ public class Gesture : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
       GetComponent<Renderer>().material.color = color;
     }
   }
-
-  // void ValidateColor() {
-  //   // Color is set before material can be assigned.. add delay ?
-  //   if (color == Color.black) {
-  //     // GetComponent<Renderer>().material = GameObject.Instantiate(GetComponent<Renderer>().material);
-  //     // color = GetComponent<Renderer>().material.color;
-  //   }
-  // }
+  
 }
