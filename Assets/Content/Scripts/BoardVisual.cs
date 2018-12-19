@@ -25,6 +25,9 @@ public class BoardVisual : MonoBehaviour {
         Destroy(item.gameObject);
       }
 
+      Vector3 min = Vector3.zero;
+      Vector3 max = Vector3.zero;
+
       // Generate the board
       var index = 0;
       foreach (var block in CardData.instance.GetBlocks()) {
@@ -40,15 +43,22 @@ public class BoardVisual : MonoBehaviour {
 
         var copy = GameObject.Instantiate(template, generated.transform);
         var visual = copy.GetComponent<BlockVisual>();
-        copy.transform.localPosition = new Vector3(block.position.x, 0, block.position.y);
+        var p = new Vector3(block.position.x, 0, block.position.y);
+        copy.transform.localPosition = p;
         copy.SetActive(true);
         if (visual) {
           visual.card = new Card(block.player, index, Symbol.None, Location.Block);
           visual.Clean();
         }
 
+        min = Vector3.Min(min, p);
+        max = Vector3.Max(max, p);
+
         index += 1;
       }
+
+      transform.localPosition = Vector3.Scale(transform.localScale, (min + max) / -2f);
+
     }
   }
 
