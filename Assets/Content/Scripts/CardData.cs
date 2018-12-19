@@ -25,8 +25,8 @@ public class CardData : MonoBehaviour {
   }
 
   public IEnumerable<Card> GetCards() {
-    foreach (var item in cards) {
-      yield return item;
+    for (int i = 0; i < cards.Count; i++) {
+      yield return cards[i];
     }
   }
   public IEnumerable<Block> GetBlocks() {
