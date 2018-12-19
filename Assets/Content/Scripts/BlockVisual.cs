@@ -23,39 +23,44 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
 
   public void Update() {
     if (CardData.instance.IsDirty(ref lastUpdatedTurn)) {
+      Clean(false);
+    }
+  }
 
-      foreach (Transform item in billboard.transform) {
-        if (item.name == "[COPY]") {
-          Destroy(item.gameObject);
-        }
+  public void Clean(bool manualClean = true) {
+    if (manualClean) {
+      CardData.instance.IsDirty(ref lastUpdatedTurn);
+    }
+
+    foreach (Transform item in billboard.transform) {
+      if (item.name == "[COPY]") {
+        Destroy(item.gameObject);
       }
+    }
 
-      var setBillboardActive = false;
+    var setBillboardActive = false;
 
-      var types = new List<Symbol>();
-      foreach (var item in CardData.instance.GetCards()) {
-        if (item.blockIndex == card.blockIndex && 
-            item.location == card.location) {
-          types.Add(item.symbol);
-        }
+    var types = new List<Symbol>();
+    foreach (var item in CardData.instance.GetCards()) {
+      if (item.blockIndex == card.blockIndex && 
+          item.location == card.location) {
+        types.Add(item.symbol);
       }
-      types.Sort((a, b) => (int)b - (int)a);
+    }
+    types.Sort((a, b) => (int)b - (int)a);
 
-      foreach (var item in types) {
-        var copy = GameObject.Instantiate(templates[(int)item], billboard.transform);
-        copy.name = "[COPY]";
-        copy.SetActive(true);
+    foreach (var item in types) {
+      var copy = GameObject.Instantiate(templates[(int)item], billboard.transform);
+      copy.name = "[COPY]";
+      copy.SetActive(true);
 
-        setBillboardActive = true;
-      }
-      
-      billboard.SetActive(setBillboardActive);
+      setBillboardActive = true;
+    }
+    
+    billboard.SetActive(setBillboardActive);
 
-      // print(card.player);
-
-      if (card.player >= 0) {
-        GetComponent<MeshRenderer>().material = materials[card.player + 1];
-      }
+    if (card.player >= 0) {
+      GetComponent<MeshRenderer>().material = materials[card.player + 1];
     }
   }
 

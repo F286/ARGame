@@ -40,11 +40,12 @@ public class BoardVisual : MonoBehaviour {
 
         var copy = GameObject.Instantiate(template, generated.transform);
         var visual = copy.GetComponent<BlockVisual>();
-        if (visual) {
-          visual.card = new Card(block.player, index, Symbol.None, Location.Block);
-        }
         copy.transform.localPosition = new Vector3(block.position.x, 0, block.position.y);
         copy.SetActive(true);
+        if (visual) {
+          visual.card = new Card(block.player, index, Symbol.None, Location.Block);
+          visual.Clean();
+        }
 
         index += 1;
       }

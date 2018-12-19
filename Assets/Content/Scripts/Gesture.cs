@@ -8,6 +8,11 @@ public class Gesture : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
   public Color color = Color.black;
   public UnityEvent onInteract;
+
+  public void Start() {
+    GetComponent<Renderer>().material = GameObject.Instantiate(GetComponent<Renderer>().material);
+    color = GetComponent<Renderer>().material.color;
+  }
   
   // Color? color = null;
 
@@ -20,22 +25,25 @@ public class Gesture : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
   }
 
   public void OnPointerEnter(PointerEventData eventData) {
-    ValidateColor();
+    // ValidateColor();
 
-    GetComponent<Renderer>().material.color = Color.Lerp(color, Color.black, 0.1f);
+    if (color != Color.black) {
+      GetComponent<Renderer>().material.color = Color.Lerp(color, Color.black, 0.1f);
+    }
   }
 
   public void OnPointerExit(PointerEventData eventData) {
-    ValidateColor();
-
-    GetComponent<Renderer>().material.color = color;
-  }
-
-  void ValidateColor() {
-    // Color is set before material can be assigned.. add delay ?
-    if (color == Color.black) {
-      GetComponent<Renderer>().material = GameObject.Instantiate(GetComponent<Renderer>().material);
-      color = GetComponent<Renderer>().material.color;
+    
+    if (color != Color.black) {
+      GetComponent<Renderer>().material.color = color;
     }
   }
+
+  // void ValidateColor() {
+  //   // Color is set before material can be assigned.. add delay ?
+  //   if (color == Color.black) {
+  //     // GetComponent<Renderer>().material = GameObject.Instantiate(GetComponent<Renderer>().material);
+  //     // color = GetComponent<Renderer>().material.color;
+  //   }
+  // }
 }

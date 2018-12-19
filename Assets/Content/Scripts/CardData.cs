@@ -12,11 +12,6 @@ public class CardData : MonoBehaviour {
   [SerializeField] List<Card> cards = new List<Card>();
   [SerializeField] List<Block> blocks = new List<Block>();
 
-  // [SerializeField] Player[] players = new Player[2];
-
-  // [SerializeField] List<Tile> board = new List<Tile>();
-  // [SerializeField] List<Card> cards = new List<Card>();
-
   public Vector2Int GetRobotPosition() {
     return robotPosition;
   }
@@ -34,12 +29,6 @@ public class CardData : MonoBehaviour {
       yield return item;
     }
   }
-  // public List<Tile> GetBoard() {
-  //   return board;
-  // }
-  // public List<Card> GetCards() {
-  //   return cards;
-  // }
   public int FindBlockIndex(Vector2Int position) {
     for (int i = 0; i < blocks.Count; i++) {
       if (position == blocks[i].position) {
@@ -47,6 +36,9 @@ public class CardData : MonoBehaviour {
       }
     }
     return -1;
+  }
+  public Block FindBlock(int blockIndex) {
+    return blocks[blockIndex];
   }
   public void SetCard(Card target, Card setTo) {
     for (int i = 0; i < cards.Count; i++) {
@@ -57,14 +49,6 @@ public class CardData : MonoBehaviour {
         return;
       }
     }
-    // foreach (var item in cards) {
-    //   if (item.type == cardType && item.position == cardPosition) {
-    //     item.position = setTo;
-
-    //     SetDirty();
-    //     return;
-    //   }
-    // }
     Debug.Assert(false, "CardData couldn't find: " + target);
   }
 
@@ -148,48 +132,3 @@ public enum Location {
   Share,
   Block,
 }
-
-// [System.Serializable]
-// public class Player {
-//   public List<Vector2Int> board;
-//   public List<Card> cards;
-// }
-// [System.Serializable]
-// public class Tile {
-//   public Vector2Int board;
-//   public int playerIndex;
-// }
-// [System.Serializable]
-// public class Card {
-//   public CardPosition position;
-//   public CardType type;
-// }
-// public enum CardPosition {
-//   Player1Toolbox = -500,
-//   Player2Toolbox = -499,
-//   Player1Share = -400,
-//   Player2Share = -399,
-//   Invalid = -300,
-//   Tile0 = 0,
-//   Tile1 = 1,
-//   Tile2 = 2,
-//   Tile3 = 3,
-//   Tile4 = 4,
-//   Tile5 = 5,
-//   Tile6 = 6,
-//   Tile7 = 7,
-//   Tile8 = 8,
-//   Tile9 = 9,
-//   Tile10 = 10,
-//   Tile11 = 11,
-//   Tile12 = 12,
-//   Tile13 = 13,
-//   Tile14 = 14,
-//   Tile15 = 15,
-// }
-// public enum CardType {
-//   Invalid,
-//   Forward,
-//   Left,
-//   Right,
-// }
