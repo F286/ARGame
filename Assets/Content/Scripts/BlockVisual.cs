@@ -12,6 +12,7 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
   [Space]
   public GameObject billboard;
   public GameObject[] templates;
+  public Material[] materials;
 
   public void Awake() {
     foreach (var item in templates) {
@@ -49,6 +50,8 @@ public class BlockVisual : MonoBehaviour, ICardTarget {
       }
       
       billboard.SetActive(setBillboardActive);
+
+      GetComponent<MeshRenderer>().material = materials[card.player + 1];
     }
   }
 

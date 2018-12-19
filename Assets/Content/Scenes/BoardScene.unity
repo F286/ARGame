@@ -1831,6 +1831,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toolbox Background
       objectReference: {fileID: 0}
+    - target: {fileID: 7411875614689673444, guid: bf488aaf84bac1440abda175760d04c2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5840246
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411875614689673444, guid: bf488aaf84bac1440abda175760d04c2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411875614689673444, guid: bf488aaf84bac1440abda175760d04c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5019608
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf488aaf84bac1440abda175760d04c2, type: 3}
 --- !u!224 &874463895 stripped
@@ -1929,7 +1944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9795cd09ae28ab24985cdafe56904547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDelay: 0.5
+  animationDelay: 0.3
   player0: {fileID: 1092487134}
   player1: {fileID: 1809612851}
 --- !u!1 &930564074
@@ -4138,6 +4153,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_DisabledColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2494501572913504802, guid: f442b048497c8534c94f8180b296c0f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7881918696549548475, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f442b048497c8534c94f8180b296c0f5, type: 3}
@@ -5816,6 +5836,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Toolbox Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411875614689673444, guid: bf488aaf84bac1440abda175760d04c2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411875614689673444, guid: bf488aaf84bac1440abda175760d04c2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411875614689673444, guid: bf488aaf84bac1440abda175760d04c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8862746
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf488aaf84bac1440abda175760d04c2, type: 3}

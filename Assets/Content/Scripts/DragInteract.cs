@@ -23,7 +23,22 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
   public void OnEndDrag(PointerEventData eventData) {
     
     graphic.anchoredPosition = Vector2.zero;
+    
+    ICardTarget cardTarget = GetTarget(eventData);
 
+    if (cardTarget != null) {
+      var target = cardTarget.GetCard();
+      var self = GetComponent<ICardTarget>().GetCard();
+
+      if (self.player == target.player) {
+        CardData.instance.SetCard(self, new Card(self.player, target.blockIndex, self.symbol, target.location));
+      }
+    }
+
+    GetComponent<CanvasGroup>().blocksRaycasts = true;
+  }
+
+  ICardTarget GetTarget(PointerEventData eventData) {
     ICardTarget cardTarget = null;
     foreach (var item in eventData.hovered) {
       var find = item.GetComponent<ICardTarget>();
@@ -32,19 +47,7 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
         break;
       }
     }
-    if (cardTarget != null) {
-      var target = cardTarget.GetCard();
-      var self = GetComponent<ICardTarget>().GetCard();
-
-      // print(self);
-      // print(target);
-
-      if (self.player == target.player) {
-        CardData.instance.SetCard(self, new Card(self.player, target.blockIndex, self.symbol, target.location));
-      }
-    }
-
-    GetComponent<CanvasGroup>().blocksRaycasts = true;
+    return cardTarget;
   }
 
 }
