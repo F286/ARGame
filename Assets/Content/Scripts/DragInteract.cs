@@ -27,8 +27,13 @@ public class DragInteract : MonoBehaviour, IInitializePotentialDragHandler, IBeg
     
     graphic.anchoredPosition = Vector2.zero;
 
-    var hovered = eventData.hovered[0].GetComponentInParent<ICardTarget>();
+    var target = eventData.hovered == null || 
+                 eventData.hovered.Count == 0 ? 
+                    null : eventData.hovered[0];
+    Debug.Log(target, target);
+    var hovered = target == null ? null : target.GetComponentInParent<ICardTarget>();
 
+    print(hovered);
     if (hovered != null) {
       var cardTarget = GetComponent<ICardTarget>();
       var cardPosition = cardTarget.GetPosition();

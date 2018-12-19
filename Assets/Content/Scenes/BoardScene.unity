@@ -4144,6 +4144,12 @@ MonoBehaviour:
     type: 1
   - position: 2
     type: 2
+  - position: -500
+    type: 2
+  - position: -500
+    type: 1
+  - position: -499
+    type: 2
 --- !u!4 &1315751611
 Transform:
   m_ObjectHideFlags: 0
